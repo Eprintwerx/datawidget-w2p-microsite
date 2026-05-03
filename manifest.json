@@ -1,0 +1,10 @@
+{
+  "name": "DataWidget® for Web-to-Print",
+  "short_name": "DataWidget® W2P",
+  "description": "Patented embeddable mailing-list builder for postcard, EDDM, and direct-mail platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#FF6633",
+  "background_color": "#ffffff",
+  "icons": [{"src":"https://www.leadsplease.com/affiliates/lp/images/look_feel/logo-lp-1777739221978-2993.png","sizes":"192x192","type":"image/png"}]
+}

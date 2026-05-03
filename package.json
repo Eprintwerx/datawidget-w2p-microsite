@@ -1,0 +1,8 @@
+{
+  "name": "datawidget-w2p-microsite",
+  "version": "1.0.0",
+  "description": "DataWidget® for Web-to-Print marketing microsite — patented embeddable mailing-list builder for postcard, EDDM, and direct-mail platforms. Hosted at web-to-print.datawidget.com.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}

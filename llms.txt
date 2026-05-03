@@ -1,0 +1,32 @@
+# DataWidget® for Web-to-Print
+
+> Patented (U.S. Patents 12,482,026 + 10,102,557) embeddable mailing-list builder for web-to-print, postcard, EDDM, and direct-mail platforms. Drops into your audience-selection step in 30 seconds. White-label per affiliate. Three-panel UI: AI chat assistant, interactive Leaflet map, demographic filters. 250M+ U.S. consumers, 18M+ businesses, sourced from Experian® and Equifax®, USPS CASS-certified.
+
+## Reference site
+- https://www.thedatawidget.com/ (legacy reference, live since 2018)
+- https://www.thedatawidget.com/try-it (canonical sandbox)
+
+## Live working example
+- https://datawidget-banner-production.up.railway.app/widget?affiliatecode=banner
+
+## Backend integration spec (legacy widget v1.5)
+- Embed: `<script src="https://test.leadsplease.com/lp_widget_1.5.js">` + `new LeadsPlease.Widget({...})`
+- Conclusion webhook: `POST conclusionurl` with XML payload (list_criteria_id, list_type, qty, price_retail, price_wholesale, session_id)
+- Fulfillment: `POST /affiliatecode/get_list?u=<usr>&p=<pwd>&list_criteria_id=<id>` — returns PENDING → READY
+- Polling cadence: no more than every 30s on the same URL
+- Download: signed CSV URL valid 14 days
+- Test mode: append `&test=true` for free anonymized data
+
+## Multi-tenant pricing
+- `datasetkey` parameter selects per-customer pricing/demographic config under one affiliatecode
+
+## Pricing (two tiers)
+- Standard: $499/mo — embed, white-label XML, 50K count calls/mo, all 4 list types, Subscriptions + Intent Data, 99.9% SLA
+- Enterprise: custom — OEM, dedicated infra, below-standard per-record rates
+- Records bill at LP per-record data rates from affiliate XML — no order minimum on widget orders (unlike the website's $125-$300 minimum)
+
+## Audience
+- Postcard SaaS, EDDM tools, real-estate marketing platforms, multi-location franchise platforms, multi-channel orchestration platforms, B2B ABM platforms
+
+## Support
+- tech@leadsplease.com — (866) 306-8674
