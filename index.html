@@ -230,12 +230,99 @@
   "@type": "SoftwareApplication",
   "name": "DataWidget® for Web-to-Print",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Embeddable in any web platform via JavaScript / iframe",
-  "description": "Patented (U.S. Patent 12,482,026) embeddable mailing-list builder for web-to-print, postcard, EDDM, and direct-mail platforms. Three-panel UI: AI chat assistant, interactive Leaflet map with polygon/radius/ZIP-boundary geos, and demographic filters. Drops into any platform in 30 seconds. White-label.",
+  "applicationSubCategory": "Embeddable mailing-list builder · web-to-print · direct-mail SaaS",
+  "operatingSystem": "Embeddable in any web platform via JavaScript or iframe",
+  "description": "Patented (U.S. Patents 12,482,026 + 10,102,557) embeddable mailing-list builder for web-to-print, postcard, EDDM, and direct-mail platforms. Three-panel UI: AI chat assistant, interactive Leaflet map with polygon/radius/ZIP-boundary geos, and demographic filters. Drops into any platform in 30 seconds. White-label per affiliate. Trade prices = retail minus 20% — platform earns 20% margin on every list automatically.",
   "url": "https://web-to-print.datawidget.com/",
+  "image": "https://web-to-print.datawidget.com/og-image.svg",
   "publisher": { "@type": "Organization", "name": "LeadsPlease", "url": "https://www.leadsplease.com" },
-  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "0", "availability": "https://schema.org/InStock" },
+  "offers": [
+    { "@type": "Offer", "name": "Free TEST credentials", "priceCurrency": "USD", "price": "0", "availability": "https://schema.org/InStock", "description": "TEST environment access for developer integration. No card, no charge, capped at 100 test list orders / month." },
+    { "@type": "Offer", "name": "Production setup (one-time)", "priceCurrency": "USD", "price": "1000", "availability": "https://schema.org/InStock", "description": "One-time setup + customisation fee. LIVE LP environment access. No monthly subscription. Trade prices = retail minus 20% — 20% margin on every list automatically." }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "62", "bestRating": "5", "worstRating": "1" }
+}
+</script>
+
+<!-- Service schema — B2B positioning of the embed offering -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "DataWidget® for Web-to-Print embed program",
+  "serviceType": "Embeddable mailing-list builder for web-to-print, postcard, EDDM, and direct-mail platforms",
+  "provider": { "@type": "Organization", "name": "LeadsPlease" },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "audience": { "@type": "BusinessAudience", "name": "Web-to-print SaaS, postcard platforms, EDDM tools, direct-mail orchestration platforms, real-estate marketing platforms, multi-location franchise tools, B2B ABM platforms" },
+  "description": "Drop the patented DataWidget® into any web-to-print or direct-mail platform. White-label per affiliate. One-time $1,000 setup; thereafter trade prices = retail minus 20% — platform earns 20% margin on every list automatically.",
+  "termsOfService": "https://www.leadsplease.com/terms_of_use",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "DataWidget® for W2P offers",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Free TEST credentials", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Production setup (one-time)", "price": "1000", "priceCurrency": "USD" }
+    ]
+  },
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "62" }
+}
+</script>
+
+<!-- Product schema — the $1K production setup as a one-time-purchase product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "DataWidget® for Web-to-Print — Production Setup",
+  "image": "https://web-to-print.datawidget.com/og-image.svg",
+  "description": "One-time setup + white-label customisation for the patented DataWidget® embeddable mailing-list builder. LIVE LP environment access, custom affiliate XML (logo, brand colours, pricing tiers, demographic visibility, list-type selection), no monthly subscription. Trade prices = retail minus 20% — platform earns 20% margin on every list automatically.",
+  "brand": { "@type": "Brand", "name": "LeadsPlease" },
+  "category": "Embeddable B2B SaaS · Web-to-Print integration",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://web-to-print.datawidget.com/#install",
+    "priceCurrency": "USD",
+    "price": "1000",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1000", "priceCurrency": "USD", "valueAddedTaxIncluded": false, "unitText": "ONE-TIME" }
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "62" }
+}
+</script>
+
+<!-- Article schema for the Integration Guide tab — substantive editorial content -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "DataWidget® Integration Guide — embed, conclusion webhook, get_list polling, list download, skinning",
+  "description": "Complete developer reference for integrating the patented DataWidget® into a web-to-print application. Embed snippet, widget lifecycle, conclusionurl webhook XML, server-side fulfillment, list download, skinning, multi-tenant pricing, and the test environment.",
+  "url": "https://web-to-print.datawidget.com/#guide",
+  "image": "https://web-to-print.datawidget.com/og-image.svg",
+  "author": { "@type": "Organization", "name": "LeadsPlease" },
+  "publisher": { "@type": "Organization", "name": "LeadsPlease", "logo": { "@type": "ImageObject", "url": "https://www.leadsplease.com/affiliates/lp/images/look_feel/logo-lp-1777739221978-2993.png" } },
+  "datePublished": "2018-09-27",
+  "dateModified": "2026-05-03",
+  "proficiencyLevel": "Beginner to intermediate JavaScript / server-side developer",
+  "dependencies": "Any HTTP client capable of HTTPS POST and XML parsing"
+}
+</script>
+
+<!-- ItemList — six W2P deployment patterns -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "DataWidget® for Web-to-Print — common deployment patterns",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Postcard SaaS",                "description": "Full embed at the audience step of postcard / direct-mail design platforms" },
+    { "@type": "ListItem", "position": 2, "name": "EDDM Tools",                   "description": "Compact (no chat) embed for USPS Every Door Direct Mail platforms" },
+    { "@type": "ListItem", "position": 3, "name": "Real-Estate Marketing",        "description": "Farming + just-closed combo for real-estate marketing platforms" },
+    { "@type": "ListItem", "position": 4, "name": "Multi-Location Franchise",     "description": "Per-franchisee territory radius + corporate-approved templates" },
+    { "@type": "ListItem", "position": 5, "name": "Direct-Mail Orchestration",    "description": "Multi-channel campaign platforms piping CSV into print + ESP + CTV" },
+    { "@type": "ListItem", "position": 6, "name": "B2B ABM",                      "description": "SIC + employee + executive-title filters for ABM direct-mail sequences" }
+  ]
 }
 </script>
 
@@ -861,7 +948,7 @@ curl -X POST <span class="s">"https://api.leadsplease.com/affiliatecode/get_list
       <div class="uc-card">
         <div class="cat">Postcard SaaS</div>
         <h3>Postcard / direct-mail design platforms</h3>
-        <p>Your customer designs in your editor; at the audience step they hit DataWidget®; geography + demographic + count returns to your checkout with a price. CSV delivered to your print partner on payment confirmation. We've seen 40&ndash;80% conversion lift at the audience step vs sending users to a third-party list broker.</p>
+        <p>Your customer designs in your editor; at the audience step they hit DataWidget®; geography + demographic + count returns to your checkout with a price. CSV delivered to your print partner on payment confirmation. We've seen 40&ndash;80% conversion lift at the audience step vs sending users to a third-party list broker. Pairs with the <a href="https://leadsplease-solutions-microsite-production.up.railway.app/applied/direct-mail-campaigns.html" target="_blank" rel="noopener">Direct-Mail Campaign playbook</a> for cadence + tracking guidance.</p>
         <div class="stack">embed full · PostMessage callback · webhook on checkout</div>
       </div>
       <div class="uc-card">
@@ -879,8 +966,14 @@ curl -X POST <span class="s">"https://api.leadsplease.com/affiliatecode/get_list
       <div class="uc-card">
         <div class="cat">Multi-Location Franchise</div>
         <h3>Franchisor marketing-management platforms</h3>
-        <p>Each franchisee logs in, hits DataWidget® scoped to their territory (radius around their address), pulls a list, runs the corporate-approved postcard template. Brand consistency at HQ; geographic precision at the unit. White-label per franchisor.</p>
+        <p>Each franchisee logs in, hits DataWidget® scoped to their territory (radius around their address), pulls a list, runs the corporate-approved postcard template. Brand consistency at HQ; geographic precision at the unit. White-label per franchisor. Same data backend as the <a href="https://leadsplease-data-api-microsite-production.up.railway.app/" target="_blank" rel="noopener">Data API</a> &mdash; if your franchisor app already uses the API, the widget plugs in for the audience-build UX without changing your data layer.</p>
         <div class="stack">per-franchisee affiliate XML · radius-only mode · brand lock</div>
+      </div>
+      <div class="uc-card">
+        <div class="cat">AI · Conversational</div>
+        <h3>AI agent that builds the audience for the user</h3>
+        <p>Pair the embedded DataWidget® with the <a href="https://leadsplease-mcp-microsite-production.up.railway.app/" target="_blank" rel="noopener">LeadsPlease® MCP Server</a> running inside Claude / ChatGPT / Cursor / n8n. The user types "high-income households 7+ years in residence in Phoenix, ~5,000 records"; the agent calls the MCP <code>count_audience</code> + <code>preview_audience</code> tools and configures the widget accordingly. Audience built before the user even opens the map.</p>
+        <div class="stack">MCP Server tools + DataWidget® · prefill via constructor params</div>
       </div>
       <div class="uc-card">
         <div class="cat">Direct-Mail Orchestration</div>
