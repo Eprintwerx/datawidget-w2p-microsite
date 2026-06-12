@@ -1,0 +1,40 @@
+name: Deploy microsite to S3
+
+# Every push to any branch deploys to s3://leadsplease-test-w2p-widget/datawidget-w2p/
+# and invalidates the CloudFront distribution. To scope this to one branch later, change
+# the filter below to e.g. `branches: [main]`.
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+# Serialize deploys so two concurrent pushes don't race on the same S3 prefix.
+# `cancel-in-progress: false` lets an in-flight deploy finish before the next one starts.
+concurrency:
+  group: deploy-s3-datawidget-w2p
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy to S3 + invalidate CloudFront
+        shell: pwsh
+        run: |
+          # The PS script uses $env:TEMP for its staging dir; on Linux runners
+          # that variable isn't set by default. Point it at the runner's temp dir.
+          $env:TEMP = $env:RUNNER_TEMP
+          ./scripts/deploy-s3.ps1 `
+            -BucketName leadsplease-test-w2p-widget `
+            -PathPrefix datawidget-w2p
