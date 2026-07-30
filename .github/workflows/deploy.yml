@@ -1,8 +1,8 @@
 name: Deploy microsite to S3
 
-# Every push to any branch deploys to s3://leadsplease-test-w2p-widget/datawidget-w2p/
-# and invalidates the CloudFront distribution. To scope this to one branch later, change
-# the filter below to e.g. `branches: [main]`.
+# Every push to any branch deploys to s3://<BUCKET_NAME>/datawidget-w2p/ (BUCKET_NAME
+# comes from the "test" GitHub environment's variables) and invalidates the CloudFront
+# distribution. To scope this to one branch later, change the filter below to e.g. `branches: [main]`.
 on:
   push:
     branches: ['**']
@@ -17,6 +17,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: test
     permissions:
       contents: read
     steps:
@@ -36,5 +37,5 @@ jobs:
           # that variable isn't set by default. Point it at the runner's temp dir.
           $env:TEMP = $env:RUNNER_TEMP
           ./scripts/deploy-s3.ps1 `
-            -BucketName leadsplease-test-w2p-widget `
-            -PathPrefix datawidget-w2p
+            -BucketName "${{ vars.BUCKET_NAME }}" `
+            -PathPrefix datawidget-web-to-print
